@@ -20,6 +20,15 @@ function App() {
     // eslint-disable-next-line
   },[array]);
 
+  //To prevent accidental reloads of webpage.
+  const alertUser = (e) => {     e.preventDefault();     e.returnValue = "";   };
+  useEffect(() => {
+    window.addEventListener("beforeunload", alertUser);
+    return () => {
+      window.removeEventListener("beforeunload", alertUser);
+    };
+  }, []);
+
   const handleReset=()=>{
       setArray(Array(9).fill(''));
       setIsGameOver(false);
