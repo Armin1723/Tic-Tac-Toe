@@ -4,8 +4,7 @@ import React , {useEffect, useState} from 'react';
 import GameOver from './Components/GameOver';
 import Ting from './Assets/ting.mp3';
 import Footer from './Components/Footer'
-
-
+import Confetti from 'react-confetti';
 
 function App() {
   const [turn, setTurn] = useState('X');
@@ -22,7 +21,7 @@ function App() {
   const handleReset=()=>{
       setArray(Array(9).fill(''));
       setIsGameOver(false);
-      
+      setGameDrawn(false);
   }
 
   const checkWin=() =>{
@@ -80,6 +79,7 @@ function App() {
       </div>
       {!isGameOver && <GameBox array={array} handleClick={handleClick}/> }
       {isGameOver && <GameOver turn={turn} handleReset={handleReset} gameDrawn={gameDrawn}/>}
+      { isGameOver && !gameDrawn && <Confetti />}
       <Footer/>
     </div>
   );
