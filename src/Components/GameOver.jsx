@@ -19,7 +19,7 @@ function GameOver({ turn , handleReset , gameDrawn , handleResetCounter}) {
         <p className='text-5xl font-extrabold '>
           GameOver
         </p>
-        <button className='focus:outline-none bg-gray-300 p-[1vh] transition ease-out hover:scale-110 rounded-md border-r-2' onClick={handleReset}>Reset</button>
+        <button className='focus:outline-none bg-gray-300 p-[1vh] transition ease-out hover:scale-110 rounded-md border-r-2' onClick={handleReset}>New Game</button>
         <button className='focus:outline-none bg-gray-300 p-[1vh] transition ease-out hover:scale-110 rounded-md border-r-2' onClick={handleResetCounter}>Reset Win Counter</button>
       </div>
   )
