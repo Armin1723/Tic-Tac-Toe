@@ -2,7 +2,7 @@ import React from 'react'
 import Win from '../Assets/Win.gif'
 import gameOverMusic from '../Assets/gameOver.mp3'
 
-function GameOver({ turn , handleReset , gameDrawn }) {
+function GameOver({ turn , handleReset , gameDrawn , handleResetCounter}) {
   
   let gameOverSound = new Audio(gameOverMusic);
   gameOverSound.play();
@@ -20,6 +20,7 @@ function GameOver({ turn , handleReset , gameDrawn }) {
           GameOver
         </p>
         <button className='focus:outline-none bg-gray-300 p-[1vh] transition ease-out hover:scale-110 rounded-md border-r-2' onClick={handleReset}>Reset</button>
+        <button className='focus:outline-none bg-gray-300 p-[1vh] transition ease-out hover:scale-110 rounded-md border-r-2' onClick={handleResetCounter}>Reset Win Counter</button>
       </div>
   )
 }

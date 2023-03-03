@@ -2,7 +2,7 @@ import React from 'react'
 
 const GameBox = ({array, handleClick}) => { 
   return (
-    <div className='board my-8'>
+    <div className='board my-2'>
         {array.map((item,index) => {
                 if( item === '')
                 return (
